@@ -16,13 +16,20 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         // url: process.env.WPGRAPHQL_URL,
-        url: "http://worpdress-gatsby.ddev.site/graphql"
-      },
+        url: process.env.WPGRAPHQL_URL,
+        auth: {
+              htaccess: {
+                username: process.env.HTACCESS_USERNAME,
+                password: process.env.HTACCESS_PASS
+              }
+        }
+      }
     },
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
     "gatsby-transformer-sharp",
     "gatsby-plugin-vanilla-extract",
+    "gatsby-plugin-netlify",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
