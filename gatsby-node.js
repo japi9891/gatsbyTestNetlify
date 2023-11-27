@@ -535,8 +535,14 @@ exports.onCreateNode = ({
   }
 }
 
-exports.createPages = ({ actions }) => {
-  const { createSlice } = actions
+
+const path = require(`path`)
+const slash = require(`slash`)
+
+exports.createPages = ({  graphql, actions }) => {
+  const { createSlice } = actions;
+  const { createPage } = actions;
+
   createSlice({
     id: "header",
     component: require.resolve("./src/components/header.js"),
