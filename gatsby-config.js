@@ -22,7 +22,16 @@ module.exports = {
                 username: process.env.HTACCESS_USERNAME,
                 password: process.env.HTACCESS_PASS
               }
-        }
+        },
+        includedRoutes: [
+          '**/posts',
+          '**/pages',
+          '**/tags',
+          '**/categories',
+          '**/media',
+          '**/taxonomies',
+          '**/homepage'
+        ],
       }
     },
     "gatsby-plugin-sharp",
